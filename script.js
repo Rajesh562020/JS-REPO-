@@ -156,6 +156,7 @@
 //         console.log("mr rajesh");   //mr rajesh
    
 //     }
+
 //  }
 //  student.printName();
 
@@ -167,12 +168,58 @@
 //     console.log("my age is "+this.age)
 //    }
 //    student.printAge();
-   // newly added keys are fatheName and printAge are now inside the object student;
-/**************************************************************************************************** */
+// newly added keys are fatheName and printAge are now inside the object student;
+
+// function expression ;
+// let printHello = function (){
+//     console.log("hello guys!");
+// }
+// printHello();
 
 /**************************************************************************************************** */
+//hoisting of var rather than let and const
+// function printNumber(){
+//     console.log(number);
+//     var number = 45;
+// }
+// printNumber();
+// this prints (undefined) as var is hoisted into local scope and is assigned a value of undefined;
+
+
+// function printNumber(){
+//     console.log(number);
+//     let number = 45;
+// }
+// printNumber();
+ // number here is also undefined in local but not accessible;
+// Uncaught ReferenceError: Cannot access 'number' before initialization
+ 
+// function printNumber(){
+//     console.log(number);
+//     const number = 45;
+// }
+// printNumber();
+ // number here is also undefined in local but not accessible;
+
+// Uncaught ReferenceError: Cannot access 'number' before initialization
 
 /**************************************************************************************************** */
+//function hoisting
+// printHello();
+// function printHello(){
+//     console.log("hello");
+// }
+// prints hello into console yet its defined later;
+ 
+// function inside function
+// function test(){
+//     printHello();
+//     function printHello(){
+//         console.log("hello");
+//     }
+
+// }
+// test();
 
 /**************************************************************************************************** */
 

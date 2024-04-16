@@ -359,9 +359,16 @@
 // }
 // example();
 /******************************************************/
-/*COERCION*/
+/*TYPE COERCION*/
+// Implicit type coercion in javascript is the automatic conversion of value from one data type to another.
+//  It takes place when the operands of an expression are of different data types.
+
+/*String coercion*/
 
 /*I CASE*/
+
+ // Type coercion also takes place when using the ‘ - ‘ operator, but the difference while using ‘ - ‘ operator is that,
+ //  a string is converted to a number and then subtraction takes place.
 // var x = 1;
 // var y = '1';
 // console.log(x-y); // 0
@@ -374,7 +381,39 @@
 /*III CASE*/
 // var x = 1;
 // var y = '1';
-// console.log(x+y); // 0
+// console.log(x+y); // 11
+
+/*IV CASE*/
+// var x = 1;
+// var y = 'stome';
+// console.log(x+y); // 1stome
+
+/*Boolean Coercion*/
+//All values except false, 0, 0n, -0, “”, null, undefined, and NaN are truthy values.
+
+/*If statements*/
+// var x = 0;
+// var y = 23;
+        
+// if(x) { console.log(x) }   // The code inside this block will not run since the value of x is 0(Falsy)  
+        
+// if(y) { console.log(y) }    // The code inside this block will run since the value of y is 23 (Truthy)
+
+/*Logical operators*/
+
+/******OR ( | | ) operator********/
+//OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
+
+// var x = 220;
+// var y = "Hello";
+// var z = undefined;
+
+// console.log(x || y); // Returns 220 since the first value is truthy
+
+// console.log(x || z);  // Returns 220 since the first value is truthy
+        
+// console.log(z || x);  // Returns 220 since the first value is Falsy
+
 
 /******************************************************/
 /*DATA TYPES IN JS PRIMITIVE AND NON-PRIMITIVE*/

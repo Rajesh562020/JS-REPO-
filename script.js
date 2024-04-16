@@ -221,7 +221,190 @@
 // }
 // test();
 
-/**************************************************************************************************** */
+/****************************************16 april 2024************************************************************ */
+// function f1() {
+//     console.log('f1');
+// }
+
+// function f2() {
+//     console.log('f2');
+// }
+
+// function main() {
+//     console.log('main');
+    
+//     setTimeout(f1, 0);
+    
+//     f2();
+// }
+
+// main();
+/******************************************************/
+// function f1(){
+//     console.log("f1");
+// }
+
+// function f2(){
+//     f1();
+//     console.log("f2");
+// }
+
+// function f3(){
+//     f2();
+//     console.log("f3");
+// }
+// f3();
+/******************************************************/
+/*DIFF BW '==' && '==='*/
+
+// console.log(2 == '2');
+// console.log(2 === '2');
+// console.log( Symbol('symbol'));
+// console.log(typeof(null));
+/******************************************************/
+/*HOISTING*/
+
+/*I CASE*/
+// hoistedVariable = 3;  // initialized;
+// console.log(hoistedVariable); // outputs 3 even when the variable is declared after it is initialized	
+// var hoistedVariable; //declare;
+
+/*II CASE*/
+// hoistedFunction();  // Outputs " Hello world! " even when the function is declared after calling
+
+// function hoistedFunction(){ 
+//   console.log(" Hello world! ");
+// } 
+
+/*III CASE*/
+// Hoisting takes place in the local scope as well
+// function doSomething(){
+//     //debugger
+//   x = 33;
+//   console.log(x); // logs the value 33
+//   var x;
+// } 
+
+// doSomething();
+/******************************************************/
+/*TDZ --- TEMPORAL DEAD ZONE*/
+/*I CASE*/
+ // console.log(myVar); // Throws ReferenceError: Cannot access 'myVar' before initialization
+ // let myVar= 10;
+
+/*II CASE*/
+ // let myVar= 10;
+ // console.log(myVar); // 10
+
+/*III CASE*/
+
+ // console.log(myVar); //Uncaught ReferenceError: myVar is not defined
+ // let myVar;
+ //  myVar= 10;
+
+/*OR*/
+ // myVar= 10;
+ // console.log(myVar); // Throws ReferenceError: Cannot access 'myVar' before initialization
+ // let myVar;
+
+/*OR*/
+ // let myVar;
+ // myVar= 10;
+ // console.log(myVar); // 10
+
+
+/*IV CASE*/
+ // console.log(myVar); // first Undefined and later 10;
+ // var myVar= 10;
+
+/*V CASE*/
+// function example() {
+//  console.log(myVar); //Uncaught ReferenceError: Cannot access 'myVar' before initialization
+//   let myVar = 10;
+   
+// }
+// example();
+
+/*VI CASE*/
+// function example() {
+ 
+//   let myVar = 10;
+// console.log(myVar); //10
+// }
+// example();
+
+/*VII CASE*/
+// function example() {
+ 
+  
+// console.log(myVar); //undefined
+// var myVar = 10;
+// }
+// example();
+
+/*VIII CASE*/
+// function example() {
+//   console.log(myVar); //undefined
+//   var myVar ;
+//   myVar = 10;
+// }
+// example();
+
+/*IX CASE*/
+// function example() {
+//    myVar = 10;
+//   console.log(myVar); //10
+//   var myVar ;
+  
+// }
+// example();
+/******************************************************/
+/*COERCION*/
+
+/*I CASE*/
+// var x = 1;
+// var y = '1';
+// console.log(x-y); // 0
+
+/*II CASE*/
+// var x = 1;
+// var y = 'stome';
+// console.log(x-y); //NaN
+
+/*III CASE*/
+// var x = 1;
+// var y = '1';
+// console.log(x+y); // 0
+
+/******************************************************/
+/*DATA TYPES IN JS PRIMITIVE AND NON-PRIMITIVE*/
+//All values except false, 0, 0n, -0, “”, null, undefined, and NaN are truthy values.
+
+/*PRIMITIVE*/
+// console.log(typeof "John Doe") // Returns "string"
+// console.log(typeof 3.14) // Returns "number"
+// console.log(typeof true) // Returns "boolean"
+// console.log(typeof 234567890123456789012345678901234567890n )// Returns bigint
+// console.log(typeof undefined) // Returns "undefined"
+// console.log(typeof null )// Returns "object" (kind of a bug in JavaScript)
+// console.log(typeof Symbol('symbol'))// Returns Symbol
+
+/*NON PRIMITIVE*/
+// Collection of data in key-value pairs
+
+// var obj1 = {
+//    x:  43,
+//    y:  "Hello world!",
+//    z: function(){
+//       return this.x;
+//    }
+// }
+      
+// Collection of data as an ordered list
+     
+//var array1 = [5, "Hello", true, 4.1]; 
+/******************************************************/
+/********************************************************************************************* */
 
 /********************************************************************************************* */
 

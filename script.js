@@ -319,6 +319,29 @@ This demonstrates the concept of function calls within other functions,
 // doSomething();
 /******************************************************/
 /*TDZ --- TEMPORAL DEAD ZONE*/
+
+/*
+Hoisting: Variables declared with var are hoisted to the top of their containing 
+function or global scope, which means that they are accessible throughout their
+scope even before the actual declaration in the code. However, their initialization
+remains in place, 
+so accessing them before their declaration results in an undefined value.
+
+
+Block Scoping: Variables declared with let and const are block-scoped,
+meaning they are only accessible within the block in which they are declared 
+(typically within curly braces {}). Unlike var, they are not hoisted to the top of the block,
+but they are still hoisted to the top of the block scope. However, they enter a 
+"temporal dead zone" from the start of the block until the declaration is reached in the code.
+During this temporal dead zone, accessing the variable results in a ReferenceError.
+
+So, the Temporal Dead Zone is specifically relevant to let and const because of their block
+scoping behavior and the strictness in accessing variables before their declaration within
+the block scope. This behavior helps catch potential bugs caused by accessing variables before
+they are initialized, promoting cleaner and more predictable code.
+
+
+*/
 /*I CASE*/
  // console.log(myVar); // Throws ReferenceError: Cannot access 'myVar' before initialization
  // let myVar= 10;

@@ -368,6 +368,28 @@ they are initialized, promoting cleaner and more predictable code.
 
 
 /*IV CASE*/
+/*
+In JavaScript, variables declared with var are hoisted to the top of their containing function or global scope.
+ However, their initialization remains in place. This behavior is the cause of the phenomenon you're observing.
+
+Variable Declaration and Initialization:
+
+The variable myVar is declared and initialized with the value 10 on the same line. However, due to hoisting, the declaration is moved to the 
+top of its containing scope, but the initialization remains in place.
+Logging myVar:
+
+The console.log(myVar) statement is executed before the myVar initialization.
+At this point, myVar has been declared (due to hoisting) but not yet initialized, so its value is undefined.
+This results in the first log: undefined.
+Variable Assignment:
+
+After the console.log statement, the variable myVar is initialized with the value 10.
+Second Logging of myVar:
+
+When myVar is accessed again later in the code, after it has been initialized, its value is 10.
+This results in the second log: 10.
+*/
+
  // console.log(myVar); // first Undefined and later 10;
  // var myVar= 10;
 
@@ -388,6 +410,14 @@ they are initialized, promoting cleaner and more predictable code.
 // example();
 
 /*VII CASE*/
+
+/*
+example() is called for the second time.
+Inside the function, the behavior is the same as the first call because each function call creates its own scope.
+console.log(myVar) logs undefined again because myVar is re-declared (due to function scope) but not yet initialized.
+Then, myVar is initialized with the value 10.
+*/
+
 // function example() {
  
   
@@ -458,20 +488,21 @@ they are initialized, promoting cleaner and more predictable code.
 /******OR ( | | ) operator********/
 //OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
 
-// var x = 220;
-// var y = "Hello";
-// var z = undefined;
+//All values except false, 0, 0n, -0, “”, null, undefined, and NaN are truthy values.
+// var x = 220; //Truthy
+// var y = "Hello"; //Truthy
+// var z = undefined; //Falsy
 
-// console.log(x || y); // Returns 220 since the first value is truthy
+// console.log(x || y); // Returns x=220 since the first value is truthy
 
-// console.log(x || z);  // Returns 220 since the first value is truthy
+// console.log(x || z);  // Returns x=220 since the first value is truthy
         
-// console.log(z || x);  // Returns 220 since the first value is Falsy
+// console.log(z || x);  // Returns x=220 since the first value is Falsy
 
 
 /******************************************************/
 /*DATA TYPES IN JS PRIMITIVE AND NON-PRIMITIVE*/
-//All values except false, 0, 0n, -0, “”, null, undefined, and NaN are truthy values.
+
 
 /*PRIMITIVE*/
 // console.log(typeof "John Doe") // Returns "string"
@@ -496,8 +527,21 @@ they are initialized, promoting cleaner and more predictable code.
 // Collection of data as an ordered list
      
 //var array1 = [5, "Hello", true, 4.1]; 
-/******************************************************/
-/********************************************************************************************* */
+/********************17 april 2024**********************************/
 
-/********************************************************************************************* */
+/*
+AND ( && ) operator - If both the values are truthy, always the second value is returned. 
+If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+*/
+
+// var x = 220;
+// var y = "Hello";
+// var z = undefined;
+
+// console.log(x && y );   // Returns "Hello" since both the values are truthy
+        
+// console.log(y && z);   // Returns undefined since the second value is falsy
+/*******************************************************/
+
+
 

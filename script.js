@@ -222,6 +222,17 @@
 // test();
 
 /****************************************16 april 2024************************************************************ */
+/*EXAMPLE OF EVENTLOOP
+1-The main function is executed synchronously.
+2-console.log('main') logs 'main' synchronously.
+3-setTimeout(f1, 0) schedules the execution of f1 after 0 milliseconds,
+but it doesn't execute immediately.
+4-f2() is called synchronously and logs 'f2' to the console immediately.
+5-After the main function completes and the call stack is empty,
+the event loop retrieves the f1 function call from the event queue and executes it, logging 'f1' to the console.
+
+
+*/
 // function f1() {
 //     console.log('f1');
 // }
@@ -239,7 +250,21 @@
 // }
 
 // main();
+/**
+ * OUTPUT
+ * main
+ * f2
+ * f1
+ */
 /******************************************************/
+/*
+This demonstrates the concept of function calls within other functions,
+ also known as function nesting. When a function calls another function, 
+ the calling function pauses its execution until the called function completes.
+ Once the called function finishes executing, control returns to the calling function.
+ 
+
+ */
 // function f1(){
 //     console.log("f1");
 // }
@@ -254,6 +279,12 @@
 //     console.log("f3");
 // }
 // f3();
+/**
+ * OUTPUT
+ * f1
+ * f2
+ * f3
+ */
 /******************************************************/
 /*DIFF BW '==' && '==='*/
 
